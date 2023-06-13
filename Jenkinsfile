@@ -29,7 +29,7 @@ pipeline{
         stage ("build image"){
             steps{
                 script{
-                    buildImage()
+                    buildImage "golebu2020/maven-repo:jma-4.0"
                 }
             }
         }
