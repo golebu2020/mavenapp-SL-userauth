@@ -26,10 +26,12 @@ pipeline{
             }
         }
 
-        stage ("build image"){
+        stage ("build and push image"){
             steps{
                 script{
-                    buildImage "golebu2020/maven-repo:jma-4.0"
+                    buildImage "golebu2020/maven-repo:jma-5.0"
+                    dockerLogin()
+                    dockerPush "golebu2020/maven-repo:jma-5.0"
                 }
             }
         }
